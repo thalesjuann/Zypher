@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bate-Papo | Zypher</title>
+    <link rel="stylesheet" href="/assets/css/principal.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="/" class="logo">Zypher</a>
+        <div class="nav-buttons">
+          <button class="btn btn-theme-toggle">
+            <i class="fa-solid fa-sun"></i>
+          </button>
+          <button class="btn btn-contact">
+            <i class="fa-solid fa-user"></i>
+          </button>
+          <div class="dropdown-menu" id="dropdownMenu">
+            <a href="#" class="menu-item">Configurações</a>
+            <a href="#" class="logout">Sair</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="chat-container">
+      <div class="messages" id="messages">
+        
+      </div>
+      <div class="input-container">
+        <input
+          type="text"
+          id="messageInput"
+          placeholder="Digite uma mensagem..."
+        />
+        <button id="sendMessage">Enviar</button>
+      </div>
+    </div>
+
+    <script src="/scripts/principal.js"></script>
+  </body>
+</html>
