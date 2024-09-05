@@ -13,10 +13,10 @@ const port = process.env.PORT || 3000;
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() =>
-    console.log(colors.green("[BANCO DE DADOS] - Conectado com sucesso"))
+    console.log(colors.green("[BANCO DE DADOS] - Conectado com sucesso")),
   )
   .catch((err) =>
-    console.error(colors.red("[BANCO DE DADOS] - Erro ao conectar:", err))
+    console.error(colors.red("[BANCO DE DADOS] - Erro ao conectar:", err)),
   );
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,7 +28,11 @@ const routes = require("./routes");
 app.use("/", routes);
 
 const server = app.listen(port, () => {
-  console.log(colors.cyan(`[SERVIDOR] - Rodando em http://localhost:${port}`));
+  console.log(
+    colors.cyan(
+      `[SERVIDOR] - O servidor está ativo e escutando na porta ${port}.`,
+    ),
+  );
 });
 
 const wss = new WebSocket.Server({ server });
@@ -50,7 +54,9 @@ wss.on("connection", (ws) => {
         }
       });
     } catch (error) {
-      console.error(colors.red("[WEB SOCKET] - Erro ao processar mensagem:", error));
+      console.error(
+        colors.red("[WEB SOCKET] - Erro ao processar mensagem:", error),
+      );
     }
   });
 
